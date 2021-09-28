@@ -31,6 +31,7 @@ int main(){
     int n;
     cin >> n;
     if (n == 0) {
+        cout << 0;
         return 0;
     }
     vector <int> boots(n);
@@ -38,17 +39,11 @@ int main(){
         cin >> boots[i];
     }
     sort(boots.begin(), boots.end());
-    int start = 0;
+    int k = 0;
     for (int i = 0; i < n; i++) {
         if (boots[i] >= foot){
-            start = i;
-            break;
-        }
-    }
-    int k = 1;
-    for (int i = start + 1; i < n; i++) {
-        if (boots[i] - boots[i - 1] >= 3) {
             k++;
+            foot = boots[i] + 3;
         }
     }
     cout << k;
