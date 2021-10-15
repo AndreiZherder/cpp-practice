@@ -28,8 +28,9 @@ int main(){
     words.push_back(word);
     for (auto& word : words) {
         word = capitalize(word);
+    }
+    for (auto& word : words) {
         cout << word << " ";
     }
-
     return 0;
 }
